@@ -1,0 +1,318 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+body {
+  font-family: -apple-system, "Open Sans", sans-serif;
+  line-height: 1.15;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 0.8fr 5fr 0.3fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper headerwrapper" "contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper contentwrapper" "footer footer footer footer footer footer footer footer footer footer footer footer";
+  height: 100vh;
+}
+
+.headerwrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". menu_items menu_items menu_items menu_items menu_items menu_items menu_items menu_items menu_items menu_items .";
+  grid-area: headerwrapper;
+  background: rgba(3, 65, 77, 0.89);
+  height: 100px;
+}
+
+.menu_items {
+  grid-area: menu_items;
+  list-style: none;
+  padding: 30px 0;
+  margin-left: -15px;
+}
+
+.menu_items ul {
+  display: flex;
+}
+.menu_items ul li {
+  text-transform: capitalize;
+  font-weight: 300;
+  list-style: none;
+  border-right: 1px solid #bbb;
+}
+.menu_items ul li a {
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+.menu_items ul li a:hover {
+  color: rgba(9, 200, 238, 0.89);
+  transition: all 0.4s;
+}
+
+.contentwrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". contentarea contentarea contentarea contentarea contentarea contentarea contentarea contentarea contentarea contentarea .";
+  grid-area: contentwrapper;
+}
+@media (max-width: 999px) {
+  .contentwrapper {
+    grid-template-columns: 30px repeat(10, 1fr) 30px;
+  }
+}
+
+.contentarea {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 65px 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." "textareaL textareaL textareaL textareaL textareaL textareaL textareaR textareaR textareaR textareaR textareaR textareaR";
+  grid-area: contentarea;
+}
+@media (max-width: 950px) {
+  .contentarea {
+    grid-template-columns: 25px repeat(10, 1fr) 25px;
+    grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." "textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL" "textareaR textareaR textareaR textareaR textareaR textareaR textareaR textareaR textareaR textareaR textareaR textareaR";
+  }
+}
+
+.contentareaabout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 65px 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." ". textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL .";
+  grid-area: contentarea;
+}
+@media (max-width: 990px) {
+  .contentareaabout {
+    grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." "textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL textareaL";
+  }
+}
+
+.contentareaUsers {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 65px 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." "tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent";
+  grid-area: contentarea;
+}
+@media (max-width: 999px) {
+  .contentareaUsers {
+    grid-template-areas: ". heading heading heading heading heading heading heading heading heading heading ." "tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent tablecontent";
+  }
+}
+
+.heading {
+  grid-area: heading;
+}
+
+h2 {
+  padding: 15px 0 15px 5px;
+}
+@media (max-width: 990px) {
+  h2 {
+    tex-align: center;
+  }
+}
+
+.textareaL {
+  grid-area: textareaL;
+}
+
+.textareaR {
+  grid-area: textareaR;
+}
+
+.tablecontent {
+  grid-area: tablecontent;
+}
+
+p {
+  padding: 25px;
+  text-indent: 50px;
+  text-align: justify;
+  float: left;
+}
+
+.aboutusTxt {
+  width: 100%;
+  padding: 50px;
+  margin-top: 10px;
+}
+@media (max-width: 800px) {
+  .aboutusTxt {
+    padding: 20px 5px 5px 5px;
+    margin-top: 5px;
+  }
+}
+
+.aboutUsHeading {
+  text-align: center;
+  padding: 60px 5px 5px 5px;
+}
+@media (max-width: 800px) {
+  .aboutUsHeading {
+    padding: 35px 5px 5px 5px;
+  }
+}
+
+#myBtn {
+  width: 80px;
+  float: right;
+  margin: 30px 0 25px 0;
+  background: rgba(3, 65, 77, 0.89);
+  color: white;
+}
+#myBtn:hover {
+  color: rgba(9, 200, 238, 0.89);
+}
+
+label {
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table.list {
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  background: rgba(3, 65, 77, 0.2);
+  color: rgba(3, 65, 77, 0.89);
+  text-align: center;
+  padding: 8px;
+  font-size: 13px;
+}
+
+.formCotainer {
+  background: white;
+}
+
+tr:nth-child(even), table.list thead > tr {
+  background-color: rgba(3, 65, 77, 0.1);
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit], input[type=button] {
+  width: 30%;
+  background-color: #ddd;
+  color: #000;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #0000ee;
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+label.validation-error {
+  color: red;
+  margin-left: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background: rgba(3, 65, 77, 0.89);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 350PX;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+  grid-area: footer;
+  justify-items: center;
+  text-align: center;
+  background: rgba(3, 65, 77, 0.89);
+  color: white;
+}
+.footer p {
+  margin: 5px 0 0 0;
+}/*# sourceMappingURL=style.css.map */
